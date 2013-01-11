@@ -1,11 +1,5 @@
 <div id="page">
     <h1>Open House Blog</h1>
-    <p>
-    Tags:
-        <% FOR tag IN tags %>
-            <a href=blog/<% tag %>><% tag %></a>
-        <% END %>
-    </p>
     <ul>
         <% FOR entry IN entries %>
             <li><a href=<% entry.url %>><% entry.title %></a></li>

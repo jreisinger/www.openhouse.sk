@@ -1,8 +1,0 @@
-<div id="page">
-    <h1>Blog</h1>
-    <ul>
-        <% FOR name IN links.keys.sort %>
-            <li><a href=<% links.$name %>><% name %></a></li>
-        <% END %>
-    </ul>
-</div>
