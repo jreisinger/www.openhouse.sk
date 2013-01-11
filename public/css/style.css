@@ -1,0 +1,43 @@
+
+body {
+margin: 10;
+margin-bottom: 25px;
+padding: 10;
+background-color: #fff;
+background-repeat: no-repeat;
+background-position: top left;
+
+font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+font-size: 13px;
+color: #333;
+}
+
+h1 {
+padding-top: 1em;
+font-size: 28px;
+color: #000;
+}
+
+a  {color: #390}
+a:hover {
+background-color: #390;
+color: white;
+text-decoration: none;
+}
+
+/* Centering a page  */
+#page {
+background-color: #fff;
+width: 500px;
+margin-left: auto;
+margin-right: auto;
+}
+
+#footer {
+padding-top: 2em;
+font-family: Verdana;
+font-size: 10px;
+width: 500px;
+margin-left: auto;
+margin-right: auto;
+}

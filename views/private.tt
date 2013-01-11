@@ -1,0 +1,20 @@
+<div id="page">
+    <h1>Private stuff</h1>
+    <p>
+        You need login/password to access these resources:
+        <ul>
+            <li><a href="https://wiki.openhouse.sk">Wiki</a> - documentation</li>
+            <li>Git - version control system</li>
+            <ul>
+                <li><a href="https://ohgit.openhouse.sk/">Open House projects</a></li>
+                <li><a href="https://sandbox.git.openhouse.sk/">Sandbox projects</a></li>
+                <li><a href="https://git.openhouse.sk/">Various projects</a></li>
+            </ul>
+            <li><a href="https://ci.openhouse.sk">Jenkins</a> - continuous integration tool</li>
+            <li><a href="https://files.openhouse.sk">Files</a> - e-books and other files</li>
+            <li><a href="https://review.openhouse.sk">ReviewBoard</a> - code review tool</li>
+            <li><a href="https://trac.openhouse.sk">Trac</a> - issue tracking system</li>
+            <li><a href="https://repos.openhouse.sk">Pakage repositories</a> - packaged software</li>
+        </ul>
+    </p>
+</div>
