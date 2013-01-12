@@ -11,4 +11,5 @@
             <li><a href=<% entry.url %>><% entry.title %></a></li>
         <% END %>
     </ul>
+    <p><a href=../blog>All</a> blog entries.</p>
 </div>

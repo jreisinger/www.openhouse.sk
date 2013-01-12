@@ -50,9 +50,22 @@ sub parse_blog_entries {
     return @entries;
 }
 
-get '/' => sub {
+sub get_tags {
+    my $blog_dir = shift;
 
-    #return "baf!";
+    my @entries = parse_blog_entries($blog_dir);
+    my @tags;
+    for my $entry (@entries) {
+        for my $tag ( @{ $entry->{tags} } ) {
+            push @tags, $tag unless grep $tag eq $_, @tags;
+        }
+    }
+
+    return @tags;
+}
+
+
+get '/' => sub {
     template 'about';
 };
 
@@ -64,10 +77,6 @@ get '/private' => sub {
     template 'private';
 };
 
-#
-# blog
-#
-
 # blog main page
 #
 my $blog_dir = dir( setting('public'), 'blog' );
@@ -77,12 +86,7 @@ get '/blog' => sub {
     my %links;
     my @entries = parse_blog_entries($blog_dir);
 
-    my @tags;
-    for my $entry (@entries) {
-        for my $tag ( @{ $entry->{tags} } ) {
-            push @tags, $tag unless grep $tag eq $_, @tags;
-        }
-    }
+    my @tags = get_tags($blog_dir);
 
     for my $entry (@entries) {
         $entry->{url} =~ s/(.*)/blog\/$1/;
@@ -96,7 +100,14 @@ get '/blog' => sub {
 #
 get qr{/blog/(\w+)$} => sub {
     my ($tag) = splat;
+
     my @entries = parse_blog_entries($blog_dir);
+
+    my @tags = get_tags($blog_dir);
+
+    for my $entry (@entries) {
+        $entry->{url} =~ s/(.*)/blog\/$1/;
+    }
 
     my @tagged_entries;
     for my $entry (@entries) {
@@ -109,7 +120,7 @@ get qr{/blog/(\w+)$} => sub {
     }
 
     set template => 'template_toolkit';
-    template 'blog_tags', { entries => \@tagged_entries };
+    template 'blog_tags', { tags => \@tags, entries => \@tagged_entries };
 };
 
 # blog entries
