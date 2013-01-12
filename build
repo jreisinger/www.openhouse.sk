@@ -1,0 +1,8 @@
+#!/bin/bash
+
+cd /tmp
+[[ -d blog ]] && rm -rf blog
+git clone git@github.com:jreisinger/blog.git
+rm /var/www/www.openhouse.sk/public/blog/*
+cp blog/publish/* /var/www/www.openhouse.sk/public/blog
+
