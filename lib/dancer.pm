@@ -108,6 +108,7 @@ get qr{/blog/(\w+)$} => sub {
         }
     }
 
+    set template => 'template_toolkit';
     template 'blog_tags', { entries => \@tagged_entries };
 };
 
