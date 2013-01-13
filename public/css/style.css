@@ -28,7 +28,7 @@ text-decoration: none;
 /* Centering a page  */
 #page {
 background-color: #fff;
-width: 500px;
+width: 768px;
 margin-left: auto;
 margin-right: auto;
 }
@@ -37,7 +37,7 @@ margin-right: auto;
 padding-top: 2em;
 font-family: Verdana;
 font-size: 10px;
-width: 500px;
+width: 768px;
 margin-left: auto;
 margin-right: auto;
 }
