@@ -26,8 +26,8 @@ sub parse_blog_entries {
             chomp( my ( $title, $date, $tags ) =
                   ( ~~ <$fh>, ~~ <$fh>, ~~ <$fh> ) );
             $title =~ s/^[#\s]+//;
-            $date  =~ s/^[#\s]+//;
-            $tags  =~ s/^[#\s]+//;
+            $date =~ s/^[#\s]+//;
+            $tags =~ s/^[#\s]+//;
 
             # update the structure will all relevant information
             my $source = substr( $File::Find::name, length($dir) );
@@ -63,7 +63,6 @@ sub get_tags {
 
     return @tags;
 }
-
 
 get '/' => sub {
     template 'about';
@@ -116,7 +115,12 @@ get qr{/blog/(\w+)$} => sub {
     }
 
     set template => 'template_toolkit';
-    template 'blog_tags', { tags => \@tags, entries => \@tagged_entries };
+    template 'blog_tags',
+      {
+        tag     => $tag,
+        tags    => \@tags,
+        entries => \@tagged_entries
+      };
 };
 
 # blog entries

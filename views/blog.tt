@@ -11,5 +11,5 @@
             <li><a href=<% entry.url %>><% entry.title %></a></li>
         <% END %>
     </ul>
-    <p><a href=../blog>All</a> blog entries.</p>
+    <p><a href=https://github.com/jreisinger/blog/tree/master/publish>All</a> blog entries.</p>
 </div>
