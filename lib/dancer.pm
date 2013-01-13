@@ -105,10 +105,6 @@ get qr{/blog/(\w+)$} => sub {
 
     my @tags = get_tags($blog_dir);
 
-    for my $entry (@entries) {
-        $entry->{url} =~ s/(.*)/blog\/$1/;
-    }
-
     my @tagged_entries;
     for my $entry (@entries) {
         for my $entry_tag ( @{ $entry->{tags} } ) {
