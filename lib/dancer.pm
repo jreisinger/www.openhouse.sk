@@ -23,10 +23,8 @@ sub parse_blog_entries {
             my $fh   = $file->openr;
 
             # parse a simple header using the kite secret operator
-            chomp( my ( $title, $date, $tags ) =
-                  ( ~~ <$fh>, ~~ <$fh>, ~~ <$fh> ) );
+            chomp( my ( $title, $tags ) = ( ~~ <$fh>, ~~ <$fh> ) );
             $title =~ s/^[#\s]+//;
-            $date =~ s/^[#\s]+//;
             $tags =~ s/^[#\s]+//;
 
             # update the structure will all relevant information
@@ -37,7 +35,6 @@ sub parse_blog_entries {
               {
                 url    => '.' . $url,
                 title  => $title,
-                date   => $date,
                 tags   => [ split /\s*,\s*/, $tags ],
                 source => "$dir/$_",
               };
