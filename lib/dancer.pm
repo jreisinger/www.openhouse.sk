@@ -44,7 +44,7 @@ sub parse_blog_entries {
         $dir
     );
 
-    return @entries;
+    return sort { $a->{title} cmp $b->{title} } @entries;
 }
 
 sub get_tags {
@@ -58,7 +58,7 @@ sub get_tags {
         }
     }
 
-    return @tags;
+    return sort @tags;
 }
 
 get '/' => sub {
