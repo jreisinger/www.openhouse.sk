@@ -44,7 +44,7 @@ sub parse_blog_entries {
         $dir
     );
 
-    return sort { $a->{title} cmp $b->{title} } @entries;
+    return sort { "\L$a->{title}" cmp "\L$b->{title}" } @entries;
 }
 
 sub get_tags {
