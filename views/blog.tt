@@ -18,4 +18,8 @@
     <p>
         <% quote %>
     </p>
+    <p>
+    (Some quotes are in Slovak or Italian. If you don't understand, don't
+    worry, just hit F5. :)
+    </p>
 </div>
