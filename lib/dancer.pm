@@ -67,7 +67,7 @@ sub get_rand_lines {
     my $file = shift;
     my $n = shift // 1;    # defaults to 1
 
-    open my $fh, $file or die "$file: $!\n";
+    open my $fh, "<:encoding(UTF-8)", $file or die "$file: $!\n";
     chomp( my @lines = <$fh> );
 
     my @rand_lines;
@@ -108,7 +108,6 @@ get '/blog' => sub {
 
     my ($quote) = get_rand_lines($blog_dir . "/" . "quotes.txt");
 
-    set template => 'template_toolkit';
     template 'blog', { tags => \@tags, quote => $quote, entries => \@entries };
 };
 
@@ -131,7 +130,6 @@ get qr{/blog/(\w+)$} => sub {
         }
     }
 
-    set template => 'template_toolkit';
     template 'blog_tags',
       {
         tag     => $tag,
