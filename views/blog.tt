@@ -16,7 +16,7 @@
         <b>Random quote</b>:
     </p>
     <p>
-        <% quote %>
+        <code><% quote %></code>
     </p>
     <p>
     (Some quotes are in Slovak or Italian. If you don't understand, don't
