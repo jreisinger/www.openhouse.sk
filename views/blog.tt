@@ -6,10 +6,16 @@
             <a href=blog/<% tag %>><% tag %></a>
         <% END %>
     </p>
-    <ul>
-        <% FOR entry IN entries %>
-            <li><a href=<% entry.url %>><% entry.title %></a></li>
-        <% END %>
-    </ul>
-    <p>All blog entries are on <a href=https://github.com/jreisinger/blog/tree/master/publish>GitHub</a>.</p>
+    <p>
+        This blog contains information useful to me in some way. You might find
+        it useful as well, hopefully. The blog entries (posts) are categorized
+        via tags. All blog entries can be found on <a
+        href=https://github.com/jreisinger/blog/tree/master/publish>GitHub</a>.
+    </p>
+    <p>
+        <b>Random quote</b>:
+    </p>
+    <p>
+        <% quote %>
+    </p>
 </div>

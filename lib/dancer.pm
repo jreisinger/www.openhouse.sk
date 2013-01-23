@@ -61,6 +61,28 @@ sub get_tags {
     return sort @tags;
 }
 
+sub get_rand_lines {
+
+    # Return $n random lines
+    my $file = shift;
+    my $n = shift // 1;    # defaults to 1
+
+    open my $fh, $file or die "$file: $!\n";
+    chomp( my @lines = <$fh> );
+
+    my @rand_lines;
+    while ( @rand_lines < $n ) {
+        my $rand_line = @lines[ rand @lines ];
+        push @rand_lines, $rand_line;
+    }
+
+    close $fh;
+
+    return @rand_lines;
+}
+
+# # #
+
 get '/' => sub {
     template 'about';
 };
@@ -84,12 +106,10 @@ get '/blog' => sub {
 
     my @tags = get_tags($blog_dir);
 
-    for my $entry (@entries) {
-        $entry->{url} =~ s/(.*)/blog\/$1/;
-    }
+    my ($quote) = get_rand_lines($blog_dir . "/" . "quotes.txt");
 
     set template => 'template_toolkit';
-    template 'blog', { tags => \@tags, entries => \@entries };
+    template 'blog', { tags => \@tags, quote => $quote, entries => \@entries };
 };
 
 # blog tags
