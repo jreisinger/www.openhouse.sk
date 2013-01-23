@@ -73,6 +73,7 @@ sub get_rand_lines {
     my @rand_lines;
     while ( @rand_lines < $n ) {
         my $rand_line = @lines[ rand @lines ];
+        next if $rand_line =~ /^\s*$/;    # skip empty lines
         push @rand_lines, $rand_line;
     }
 
@@ -106,7 +107,7 @@ get '/blog' => sub {
 
     my @tags = get_tags($blog_dir);
 
-    my ($quote) = get_rand_lines($blog_dir . "/" . "quotes.txt");
+    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
 
     template 'blog', { tags => \@tags, quote => $quote, entries => \@entries };
 };
