@@ -1,9 +1,10 @@
 <div id="page">
     <h1>About OpenHouse</h1>
     <p>
-        People behind this web site have been working in the IT/ICT area and
-are interested in these topics:
+        This web site contains information and resources related IT/ICT,
+especially the following topics:
     </p>
+
     <ul>
     <li>software development (Java, PHP, Perl, shell) and testing</li>
     <li>system administration (GNU/Linux, Solaris)</li>
