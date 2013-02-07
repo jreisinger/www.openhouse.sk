@@ -7,12 +7,7 @@
         <% END %>
     </p>
     <p>
-        The blog posts (wiki sites?) are categorized via tags. All posts can be
-found on <a
-href=https://github.com/jreisinger/blog/tree/master/publish>GitHub</a>.
-    </p>
-    <p>
-        <b>Random quote</b>:
+        Random quote:
     </p>
     <p>
         <code><% quote %></code>
@@ -20,5 +15,15 @@ href=https://github.com/jreisinger/blog/tree/master/publish>GitHub</a>.
     <p>
     (Some quotes are in Slovak or Italian. If you don't understand, don't
     worry, just hit F5. :)
+    </p>
+    <p>
+        The blog posts (or wiki sites?) are categorized via tags; see above. All
+posts (<a
+href=https://github.com/jreisinger/blog/tree/master/publish>sources</a>):
+    <ul>
+        <% FOR entry IN entries %>
+            <li><a href=blog/<% entry.url %>><% entry.title %></a></li>
+        <% END %>
+    </ul>
     </p>
 </div>
