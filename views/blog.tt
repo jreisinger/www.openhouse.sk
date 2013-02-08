@@ -22,7 +22,8 @@ posts (<a
 href=https://github.com/jreisinger/blog/tree/master/publish>sources</a>):
     <ul>
         <% FOR entry IN entries %>
-            <li><a href=blog/<% entry.url %>><% entry.title %></a></li>
+            <li><a href=blog/<% entry.url %>><% entry.title %></a> [<%
+entry.mtime_human %>]</li>
         <% END %>
     </ul>
     </p>

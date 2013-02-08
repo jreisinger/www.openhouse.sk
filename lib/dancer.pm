@@ -10,6 +10,7 @@ our $VERSION = '0.1';
 
 sub parse_blog_entries {
     my $dir = shift;
+    my $sort = shift // "by_title";    # defaults to sorting by title
 
     my @entries;
     find(
@@ -20,7 +21,11 @@ sub parse_blog_entries {
 
             # get a Path::Class::File for it
             my $file = file($File::Find::name);
-            my $fh   = $file->openr;
+
+            my $mtime       = ( stat($file) )[9];    # for sorting
+            my $mtime_human = localtime $mtime;
+
+            my $fh = $file->openr;
 
             # parse a simple header using the kite secret operator
             chomp( my ( $title, $tags ) = ( ~~ <$fh>, ~~ <$fh> ) );
@@ -33,10 +38,12 @@ sub parse_blog_entries {
 
             push @entries,
               {
-                url    => '.' . $url,
-                title  => $title,
-                tags   => [ split /\s*,\s*/, $tags ],
-                source => "$dir/$_",
+                url         => '.' . $url,
+                title       => $title,
+                tags        => [ split /\s*,\s*/, $tags ],
+                source      => "$dir/$_",
+                mtime       => $mtime,
+                mtime_human => $mtime_human,
               };
         },
 
@@ -44,7 +51,11 @@ sub parse_blog_entries {
         $dir
     );
 
-    return sort { "\L$a->{title}" cmp "\L$b->{title}" } @entries;
+    if ( $sort eq "by_title" ) {
+        return sort { "\L$a->{title}" cmp "\L$b->{title}" } @entries;
+    } else {
+        return sort { $b->{mtime} <=> $a->{mtime} } @entries;
+    }
 }
 
 sub get_tags {
@@ -103,7 +114,7 @@ my $ext = 'md';
 
 get '/blog' => sub {
     my %links;
-    my @entries = parse_blog_entries($blog_dir);
+    my @entries = parse_blog_entries( $blog_dir, "by_mtime" );
 
     my @tags = get_tags($blog_dir);
 
