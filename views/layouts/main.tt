@@ -6,7 +6,7 @@
         <!-- title taken from:
         http://stackoverflow.com/questions/11970625/how-to-make-a-page-specific-title-in-dancer-templates -->
         <title>
-            <% settings.sitename %> - <% template.name.match('(\w+).tt').0.ucfirst %>
+            <% settings.sitename %> - <% title.ucfirst %>
         </title>
         <link rel="stylesheet" href="<% request.uri_base %>/css/style.css" />
 

@@ -147,6 +147,7 @@ get qr{/blog/(\w+)$} => sub {
 
     template 'blog_tags',
       {
+        title   => $tag,
         tag     => $tag,
         tags    => \@tags,
         entries => \@tagged_entries
