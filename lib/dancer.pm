@@ -5,6 +5,7 @@ use Path::Class qw( file dir );
 use Template;
 use File::Find;
 use Data::Dumper;
+use Dancer::Plugin::SiteMap;
 
 our $VERSION = '0.1';
 
