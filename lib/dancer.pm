@@ -99,15 +99,15 @@ sub get_rand_lines {
 # # #
 
 get '/' => sub {
-    template 'about';
+    template 'about', { title => "About" };
 };
 
 get '/public' => sub {
-    template 'public';
+    template 'public', { title => "Public Resources" };
 };
 
 get '/private' => sub {
-    template 'private';
+    template 'private', { title => "Private Resources" };
 };
 
 # blog main page
@@ -123,7 +123,7 @@ get '/blog' => sub {
 
     my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
 
-    template 'blog', { tags => \@tags, quote => $quote, entries => \@entries };
+    template 'blog', { title => "Blog", tags => \@tags, quote => $quote, entries => \@entries };
 };
 
 # blog tags
