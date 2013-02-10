@@ -54,7 +54,9 @@ sub parse_blog_entries {
     if ( $sort eq "by_title" ) {
         return sort { "\L$a->{title}" cmp "\L$b->{title}" } @entries;
     } else {
-        return sort { $b->{mtime} <=> $a->{mtime} } @entries;
+        return sort {
+            $b->{mtime} <=> $a->{mtime} or "\L$a->{title}" cmp "\L$b->{title}"
+        } @entries;
     }
 }
 
