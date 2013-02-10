@@ -1,0 +1,12 @@
+<div id="page">
+    <h1>Our Code</h1>
+    <p>
+    <ul>
+      <li><a href="https://github.com/pete911">Pete's code</a> -- mainly Java, Python, PHP</li>
+      <li><a href="https://github.com/jreisinger">Jozef's code</a> -- mainly Perl, shell</li>
+      <li><a href="https://github.com/open-house">OpenHouse code</a></li>
+      <li><a href="http://repos.openhouse.sk">Package repositories</a> -- our packaged software</li>
+      <li><a href="http://files.openhouse.sk">Various files</a></li>
+    </ul>
+    </p>
+</div>

@@ -48,7 +48,6 @@ sub parse_blog_entries {
               };
         },
 
-        #setting( 'public' )
         $dir
     );
 
@@ -102,8 +101,8 @@ get '/' => sub {
     template 'about', { title => "About" };
 };
 
-get '/public' => sub {
-    template 'public', { title => "Public Resources" };
+get '/code' => sub {
+    template 'code', { title => "Code in Java, Python, Perl, Shell" };
 };
 
 get '/private' => sub {
