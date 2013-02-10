@@ -3,7 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
-        <title>OpenHouse</title>
+        <!-- title taken from:
+        http://stackoverflow.com/questions/11970625/how-to-make-a-page-specific-title-in-dancer-templates -->
+        <title>
+            <% settings.sitename %> - <% template.name.match('(\w+).tt').0.ucfirst %>
+        </title>
         <link rel="stylesheet" href="<% request.uri_base %>/css/style.css" />
 
         <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
