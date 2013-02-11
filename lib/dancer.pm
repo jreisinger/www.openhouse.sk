@@ -169,7 +169,11 @@ my $m = Text::Markdown->new;
 get qr{/blog/(.*)\.html} => sub {
     my ($file) = splat;
     my $text = file( $blog_dir, "$file.$ext" )->slurp;
-    template 'blog_entry', { content => $m->markdown($text) };
+
+    my $title = (split "\n", $text)[0]; # first line is the title
+    $title =~ s/^#\s+//;
+
+    template 'blog_entry', { title => $title, content => $m->markdown($text) };
 };
 
 true;
