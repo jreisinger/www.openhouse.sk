@@ -125,6 +125,7 @@ my $ext = 'md';
 get '/blog' => sub {
     my %links;
     my @entries = parse_blog_entries( $blog_dir, "by_mtime" );
+    @entries = @entries[0 .. 9]; # get only first ten posts
 
     my @tags = get_tags($blog_dir);
 

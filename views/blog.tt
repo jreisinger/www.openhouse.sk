@@ -7,6 +7,17 @@
         <% END %>
     </p>
     <p>
+        The blog posts (or wiki sites?) are categorized via tags above. The ten most
+        recently modified posts (<a
+        href=https://github.com/jreisinger/blog/tree/master/publish>all posts</a>):
+    <ul>
+        <% FOR entry IN entries %>
+            <li><a href=blog/<% entry.url %>><% entry.title %></a> [<%
+entry.mtime_human %>]</li>
+        <% END %>
+    </ul>
+    </p>
+    <p>
         Random quote:
     </p>
     <p>
@@ -15,16 +26,5 @@
     <p>
     (Some quotes are in Slovak or Italian. If you don't understand, don't
     worry, just hit F5. :)
-    </p>
-    <p>
-        The blog posts (or wiki sites?) are categorized via tags; see above. All
-posts (<a
-href=https://github.com/jreisinger/blog/tree/master/publish>sources</a>):
-    <ul>
-        <% FOR entry IN entries %>
-            <li><a href=blog/<% entry.url %>><% entry.title %></a> [<%
-entry.mtime_human %>]</li>
-        <% END %>
-    </ul>
     </p>
 </div>
