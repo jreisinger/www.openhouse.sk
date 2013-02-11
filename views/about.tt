@@ -1,25 +1,18 @@
 <div id="page">
     <h1>About OpenHouse</h1>
     <p>
-        We (see "People" below) like to use and <a href="projects">develop</a>
-        software, especially <a href="https://en.wikipedia.org/wiki/Free_software">free
-        software</a> (or FOSS). We are also interested in other IT related areas,
-        namely:
+        We (<a href="pete">Pete</a>, <a href="jozef">Jozef</a>) are interested <a
+        href="https://en.wikipedia.org/wiki/Free_software">free software</a> (or FOSS)
+        and other related areas, namely:
     </p>
 
     <ul>
-        <li>system administration (GNU/Linux, Solaris)</li>
+        <li>system administration (<a href="blog/linux">GNU/Linux</a>, Solaris)</li>
+        <li><a href="blog/perl">Perl</a></li>
         <li>continuous integration, continuous delivery</li>
-        <li>computer networking</li>
-        <li>IT security</li>
-        <li>IT auditing</li>
-    </ul>
-
-    <h2>People</h2>
-
-    <ul>
-        <li><a href="pete">Pete</a></li>
-        <li><a href="jozef">Jozef</a></li>
+        <li>computer <a href="blog/networking">networking</a></li>
+        <li>IT <a href="blog/security">security</a></li>
+        <li><a href="blog/audit">IT auditing</a></li>
     </ul>
 
     <p>
