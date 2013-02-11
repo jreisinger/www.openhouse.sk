@@ -7,12 +7,12 @@
     </p>
 
     <ul>
-        <li>system administration (<a href="blog/linux">GNU/Linux</a>, Solaris)</li>
+        <li>system administration (GNU/<a href="blog/linux">Linux</a>, Solaris)</li>
         <li><a href="blog/perl">Perl</a></li>
         <li>continuous integration, continuous delivery</li>
         <li>computer <a href="blog/networking">networking</a></li>
         <li>IT <a href="blog/security">security</a></li>
-        <li><a href="blog/audit">IT auditing</a></li>
+        <li>IT <a href="blog/audit">auditing</a></li>
     </ul>
 
     <p>
