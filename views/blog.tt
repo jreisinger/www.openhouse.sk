@@ -1,14 +1,11 @@
 <div id="page">
     <h1>Blog</h1>
     <p>
-    Tags:
+        The blog posts (or wiki sites?) are categorized via tags [
         <% FOR tag IN tags %>
             <a href=blog/<% tag %>><% tag %></a>
         <% END %>
-    </p>
-    <p>
-        The blog posts (or wiki sites?) are categorized via tags above. The ten most
-        recently modified posts (<a
+        ]. The ten most recently modified posts (<a
         href=https://github.com/jreisinger/blog/tree/master/publish>all posts</a>):
     <ul>
         <% FOR entry IN entries %>

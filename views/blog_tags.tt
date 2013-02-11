@@ -1,5 +1,5 @@
 <div id="page">
-    <h1>OpenHouse Blog - <% tag.ucfirst %></h1>
+    <h1>Blog - <% tag.ucfirst %></h1>
     <p>
     Tags:
         <% FOR tag IN tags %>
