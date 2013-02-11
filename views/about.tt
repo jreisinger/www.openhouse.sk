@@ -1,14 +1,14 @@
 <div id="page">
     <h1>About OpenHouse</h1>
     <p>
-        We (<a href="pete">Pete</a>, <a href="jozef">Jozef</a>) are interested <a
-        href="https://en.wikipedia.org/wiki/Free_software">free software</a> (or FOSS)
-        and other related areas, namely:
+        We (<a href="pete">Pete</a>, <a href="jozef">Jozef</a>) are interested
+        in <a href="https://en.wikipedia.org/wiki/Free_software">free software</a> (or
+        FOSS) and other related areas, namely:
     </p>
 
     <ul>
-        <li>system administration (GNU/<a href="blog/linux">Linux</a>, Solaris)</li>
-        <li><a href="blog/perl">Perl</a></li>
+        <li>GNU/<a href="blog/linux">Linux</a> system administration</li>
+        <li><a href="blog/perl">Perl</a> programming language</li>
         <li>continuous integration, continuous delivery</li>
         <li>computer <a href="blog/networking">networking</a></li>
         <li>IT <a href="blog/security">security</a></li>
@@ -17,6 +17,6 @@
 
     <p>
         The source code of this web site
-is on <a href="https://github.com/jreisinger/www.openhouse.sk">GitHub</a>.
+        is on <a href="https://github.com/jreisinger/www.openhouse.sk">GitHub</a>.
     </p>
 </div>
