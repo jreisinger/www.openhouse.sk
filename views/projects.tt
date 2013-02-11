@@ -1,0 +1,13 @@
+<div id="page">
+    <h1>Our Projects</h1>
+        We try to create somehow useful software, so here is some:
+    <p>
+    <ul>
+        <li><a href="https://github.com/open-house">OpenHouse projects</a> -- our joint code</li>
+        <li><a href="http://repos.openhouse.sk">Package repositories</a> -- some packaged software</li>
+        <li><a href="https://github.com/pete911">Pete's code</a> -- mainly Java, Python, PHP</li>
+        <li><a href="https://github.com/jreisinger">Jozef's code</a> -- mainly Perl, shell</li>
+        <li><a href="http://files.openhouse.sk">Various files</a></li>
+    </ul>
+    </p>
+</div>

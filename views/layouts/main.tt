@@ -19,7 +19,7 @@
     <body>
         <div id="sidebar">
             <p><a href="/">about</a></p>
-            <p><a href="/code">code</a></p>
+            <p><a href="/projects">projects</a></p>
             </p><a href="/blog">blog</a></p>
             <p><a href="/private">private</a></p>
         </div>

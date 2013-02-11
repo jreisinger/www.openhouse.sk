@@ -1,15 +1,25 @@
 <div id="page">
     <h1>About OpenHouse</h1>
     <p>
-        This web site contains information and resources related to IT/ICT,
-especially to the following topics:
+        We (see "People" below) like to use and <a href="projects">develop</a>
+        software, especially <a href="https://en.wikipedia.org/wiki/Free_software">free
+        software</a> (or FOSS). We are also interested in other IT related areas,
+        namely:
     </p>
 
     <ul>
-    <li>software development (Java, PHP, Perl, shell) and testing</li>
-    <li>system administration (GNU/Linux, Solaris)</li>
-    <li>networking</li>
-    <li>IT security</li>
+        <li>system administration (GNU/Linux, Solaris)</li>
+        <li>continuous integration, continuous delivery</li>
+        <li>computer networking</li>
+        <li>IT security</li>
+        <li>IT auditing</li>
+    </ul>
+
+    <h2>People</h2>
+
+    <ul>
+        <li><a href="pete">Pete</a></li>
+        <li><a href="jozef">Jozef</a></li>
     </ul>
 
     <p>
