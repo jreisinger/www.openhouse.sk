@@ -6,6 +6,7 @@ use Template;
 use File::Find;
 use Data::Dumper;
 use Dancer::Plugin::SiteMap;
+use 5.010;
 
 our $VERSION = '0.1';
 
@@ -70,6 +71,8 @@ sub get_tags {
             push @tags, $tag unless grep $tag eq $_, @tags;
         }
     }
+
+    push @tags, "All"; # Capitalize so it always sorts first
 
     return sort @tags;
 }
@@ -140,22 +143,35 @@ get qr{/blog/(\w+)$} => sub {
     my ($tag) = splat;
 
     my @entries = parse_blog_entries($blog_dir);
+    my @tags    = get_tags($blog_dir);
 
-    my @tags = get_tags($blog_dir);
-
+    # Push entries (posts) under their tags
     my @tagged_entries;
-    for my $entry (@entries) {
-        for my $entry_tag ( @{ $entry->{tags} } ) {
-            if ( $entry_tag eq $tag ) {
-                push @tagged_entries, $entry
-                  unless grep $entry->{source} eq $_->{source}, @tagged_entries;
+    if ( $tag eq "All" ) {
+        @tagged_entries = @entries;
+    } else {
+        for my $entry (@entries) {
+            for my $entry_tag ( @{ $entry->{tags} } ) {
+                if ( $entry_tag eq $tag ) {
+                    push @tagged_entries, $entry
+                      unless grep $entry->{source} eq $_->{source},
+                      @tagged_entries;
+                }
             }
         }
     }
 
+    # Set nice web page title
+    my $title;
+    given ($tag) {
+        when ("various") { $title = "Various Blog Posts"; }
+        when ("All")     { $title = "All Blog Posts"; }
+        default          { $title = "$tag Related Blog Posts"; }
+    }
+
     template 'blog_tags',
       {
-        title   => "$tag Related Blog Posts",
+        title   => $title,
         tag     => $tag,
         tags    => \@tags,
         entries => \@tagged_entries

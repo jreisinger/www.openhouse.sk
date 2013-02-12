@@ -5,8 +5,7 @@
         <% FOR tag IN tags %>
             <a href=blog/<% tag %>><% tag %></a>
         <% END %>
-        ]. The ten most recently modified posts (<a
-        href=https://github.com/jreisinger/blog/tree/master/publish>all posts</a>):
+        ]. The ten most recently modified posts:
     <ul>
         <% FOR entry IN entries %>
             <li><a href=blog/<% entry.url %>><% entry.title %></a> [<%
@@ -23,5 +22,9 @@ entry.mtime_human %>]</li>
     <p>
     (Some quotes are in Slovak or Italian. If you don't understand, don't
     worry, just hit F5. :)
+    </p>
+    <p>
+        The source code of the blog posts
+        is on <a href="https://github.com/jreisinger/blog">GitHub</a>.
     </p>
 </div>
