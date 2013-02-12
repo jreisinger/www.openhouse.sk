@@ -1,7 +1,7 @@
 <div id="page">
     <h1>Blog</h1>
     <p>
-        The blog posts (or wiki sites?) are categorized via tags [
+        The blog posts are categorized via tags [
         <% FOR tag IN tags %>
             <a href=blog/<% tag %>><% tag %></a>
         <% END %>
