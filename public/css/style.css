@@ -18,7 +18,11 @@ font-size: 28px;
 color: #000;
 }
 
-a  {color: #390}
+a {
+color: #390;
+text-decoration: none;
+}
+
 a:hover {
 background-color: #390;
 color: white;
