@@ -8,8 +8,8 @@
         ]. The ten most recently modified posts:
     <ul>
         <% FOR entry IN entries %>
-            <li><a href=blog/<% entry.url %>><% entry.title %></a> [<%
-entry.mtime_human %>]</li>
+            <li><a href=blog/<% entry.url %>><% entry.title %></a> [ <%
+entry.mtime_human %> ]</li>
         <% END %>
     </ul>
     </p>
