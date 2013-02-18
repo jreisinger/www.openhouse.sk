@@ -180,7 +180,6 @@ get qr{/blog/(\w+)$} => sub {
 
 # blog entries
 #
-my $m = Text::Markdown->new;
 
 get qr{/blog/(.*)\.html} => sub {
     my ($file) = splat;
@@ -189,6 +188,21 @@ get qr{/blog/(.*)\.html} => sub {
     my $title = (split "\n", $text)[0]; # first line is the title
     $title =~ s/^#\s+//;
 
+    my $m = Text::Markdown->new;
+    template 'blog_entry', { title => $title, content => $m->markdown($text) };
+};
+
+# doneThis
+#
+
+get qr{/(.*)/doneThis\.html} => sub {
+    my ($name) = splat;
+    my $text = file( setting('public'), "$name.$ext" )->slurp;
+
+    my $title = (split "\n", $text)[0]; # first line is the title
+    $title =~ s/^#\s+//;
+
+    my $m = Text::Markdown->new;
     template 'blog_entry', { title => $title, content => $m->markdown($text) };
 };
 
