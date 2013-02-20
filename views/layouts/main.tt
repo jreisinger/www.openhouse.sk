@@ -17,11 +17,8 @@
         /* ]]> */</script>
     </head>
     <body>
-        <div id="sidebar">
-            <p><a href="/">about</a></p>
-            <p><a href="/projects">projects</a></p>
-            </p><a href="/blog">blog</a></p>
-            <p><a href="/private">private</a></p>
+        <div id="page">
+            <a href="/">about</a> | <a href="/projects">projects</a> | <a href="/blog">blog</a> | <a href="/private">private</a>
         </div>
         <% content %>
         <div id="footer">
