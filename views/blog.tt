@@ -1,11 +1,13 @@
 <div id="page">
     <h1>Blog</h1>
     <p>
-        The blog posts are categorized via tags [
+    Tags:
         <% FOR tag IN tags %>
             <a href=blog/<% tag %>><% tag %></a>
         <% END %>
-        ]. The ten most recently modified posts:
+    </p>
+    <p>
+        The blog posts are categorized via tags above. The ten most recently modified posts:
     <ul>
         <% FOR entry IN entries %>
             <li><a href=blog/<% entry.url %>><% entry.title %></a> [ <%
@@ -24,7 +26,7 @@ entry.mtime_human %> ]</li>
     worry, just hit F5. :)
     </p>
     <p>
-        The source code of the blog posts
-        is on <a href="https://github.com/jreisinger/blog">GitHub</a>.
+        The source codes of the blog posts
+        are on <a href="https://github.com/jreisinger/blog">GitHub</a>.
     </p>
 </div>
