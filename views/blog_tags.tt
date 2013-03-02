@@ -1,14 +1,12 @@
-<div id="page">
-    <h1>Blog - <% tag.ucfirst %></h1>
-    <p>
-    Tags:
-        <% FOR tag IN tags %>
-            <a href=<% tag %>><% tag %></a>
-        <% END %>
-    </p>
-    <ul>
-        <% FOR entry IN entries %>
-            <li><a href=<% entry.url %>><% entry.title %></a></li>
-        <% END %>
-    </ul>
-</div>
+<h1>Blog - <% tag.ucfirst %></h1>
+<p>
+Tags:
+    <% FOR tag IN tags %>
+        <a href=<% tag %>><% tag %></a>
+    <% END %>
+</p>
+<ul>
+    <% FOR entry IN entries %>
+        <li><a href=<% entry.url %>><% entry.title %></a></li>
+    <% END %>
+</ul>
