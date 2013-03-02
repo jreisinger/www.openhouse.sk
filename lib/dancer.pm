@@ -104,20 +104,12 @@ get '/' => sub {
     template 'about', { title => "About" };
 };
 
-get '/projects' => sub {
-    template 'projects', { title => "Our projects" };
-};
-
 get '/private' => sub {
     template 'private', { title => "Private Resources" };
 };
 
 get '/jozef' => sub {
     template 'jozef', { title => "Jozef" };
-};
-
-get '/pete' => sub {
-    template 'pete', { title => "Pete" };
 };
 
 # blog main page
