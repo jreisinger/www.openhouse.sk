@@ -129,7 +129,7 @@ get '/blog' => sub {
     template 'blog', { title => "Blog", tags => \@tags, quote => $quote, entries => \@entries };
 };
 
-# blog tags
+# blog entries by category (tags)
 #
 get qr{/blog/(\w+)$} => sub {
     my ($tag) = splat;
@@ -177,8 +177,16 @@ get qr{/blog/(.*)\.html} => sub {
     my ($file) = splat;
     my $text = file( $blog_dir, "$file.$ext" )->slurp;
 
-    my $title = (split "\n", $text)[0]; # first line is the title
+    # Get post title and tags
+    my ($title, $tags) = (split "\n", $text)[0,1]; # first line is the title, second line are tags
     $title =~ s/^#\s+//;
+
+    # Changing '###### tag1, tag2' to 'Tags: [tag1](blog/tag1) [tag2](blog/tag2)'
+    $tags =~ s/^#+//;
+    $tags =~ s/\s+//g;
+    my @tags = split ",", $tags;
+    s|(\w+)|[$1](/blog/$1)| for @tags;
+    $text =~ s/^#{4,}.*$/Tags: @tags/m; # There should be 6 pounds ('#') but you never know :)
 
     my $m = Text::Markdown->new;
     template 'blog_entry', { title => $title, content => $m->markdown($text) };
