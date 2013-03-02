@@ -120,7 +120,7 @@ my $ext = 'md';
 get '/blog' => sub {
     my %links;
     my @entries = parse_blog_entries( $blog_dir, "by_mtime" );
-    @entries = @entries[0 .. 9]; # get only first ten posts
+    #@entries = @entries[0 .. 9]; # get only first ten posts
 
     my @tags = get_tags($blog_dir);
 
@@ -199,8 +199,14 @@ get qr{/(.*)/doneThis\.html} => sub {
     my ($name) = splat;
     my $text = file( setting('public'), "$name.$ext" )->slurp;
 
+    # Get title
     my $title = (split "\n", $text)[0]; # first line is the title
     $title =~ s/^#\s+//;
+
+    # Inject quote after title
+    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
+    my $warn = "(Some quotes are in Slovak or Italian. If you don't understand, don't worry, just hit F5. :)";
+    $text =~ s/^(#\s*.*)/$1\n\n$warn\n\n<code>$quote<\/code>\n/;
 
     my $m = Text::Markdown->new;
     template 'blog_entry', { title => $title, content => $m->markdown($text) };

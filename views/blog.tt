@@ -5,25 +5,8 @@ Tags:
         <a href="blog/<% tag %>"><% tag %></a>
     <% END %>
 </p>
-<p>
-    The blog posts are categorized via tags above. The ten most recently modified posts:
-</p>
 <ul>
     <% FOR entry IN entries %>
         <li><a href="blog/<% entry.url %>" title="<% entry.mtime_human %>"><% entry.title %></a></li>
     <% END %>
 </ul>
-<p>
-    Random quote:
-</p>
-<p>
-    <code><% quote %></code>
-</p>
-<p>
-(Some quotes are in Slovak or Italian. If you don't understand, don't
-worry, just hit F5. :)
-</p>
-<p>
-    The source codes of the blog posts
-    are on <a href="https://github.com/jreisinger/blog">GitHub</a>.
-</p>
