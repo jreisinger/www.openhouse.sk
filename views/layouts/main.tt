@@ -20,7 +20,7 @@
     </head>
     <body>
         <div id="page">
-            <a href="/">about</a> | <a href="/jozef">me</a> | <a href="/blog">blog</a> | <a href="/private">private</a>
+            <a href="/">about</a> | <a href="/jozef">me</a> | <a href="/doneThis.html">done this</a> | <a href="/blog">blog</a> | <a href="/private">private</a>
             <% content %>
         </div>
         <div id="footer">

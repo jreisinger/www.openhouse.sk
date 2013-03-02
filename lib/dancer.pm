@@ -98,7 +98,8 @@ sub get_rand_lines {
     return @rand_lines;
 }
 
-# # #
+my $blog_dir = dir( setting('public'), 'blog' );
+my $ext = 'md';
 
 get '/' => sub {
     template 'about', { title => "About" };
@@ -112,10 +113,27 @@ get '/jozef' => sub {
     template 'jozef', { title => "Jozef" };
 };
 
+# doneThis
+#
+
+get qr{/doneThis\.html} => sub {
+    my $text = file( setting('public'), "jozef.$ext" )->slurp;
+
+    # Get title
+    my $title = (split "\n", $text)[0]; # first line is the title
+    $title =~ s/^#\s+//;
+
+    # Inject quote after title
+    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
+    my $warn = "(Some quotes are in Slovak or Italian. If you don't understand, don't worry, just hit F5. :)";
+    $text =~ s/^(#\s*.*)/$1\n\n$warn\n\n<code>$quote<\/code>\n/;
+
+    my $m = Text::Markdown->new;
+    template 'blog_entry', { title => $title, content => $m->markdown($text) };
+};
+
 # blog main page
 #
-my $blog_dir = dir( setting('public'), 'blog' );
-my $ext = 'md';
 
 get '/blog' => sub {
     my %links;
@@ -187,26 +205,6 @@ get qr{/blog/(.*)\.html} => sub {
     my @tags = split ",", $tags;
     s|(\w+)|[$1](/blog/$1)| for @tags;
     $text =~ s/^#{4,}.*$/Tags: @tags/m; # There should be 6 pounds ('#') but you never know :)
-
-    my $m = Text::Markdown->new;
-    template 'blog_entry', { title => $title, content => $m->markdown($text) };
-};
-
-# doneThis
-#
-
-get qr{/(.*)/doneThis\.html} => sub {
-    my ($name) = splat;
-    my $text = file( setting('public'), "$name.$ext" )->slurp;
-
-    # Get title
-    my $title = (split "\n", $text)[0]; # first line is the title
-    $title =~ s/^#\s+//;
-
-    # Inject quote after title
-    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
-    my $warn = "(Some quotes are in Slovak or Italian. If you don't understand, don't worry, just hit F5. :)";
-    $text =~ s/^(#\s*.*)/$1\n\n$warn\n\n<code>$quote<\/code>\n/;
 
     my $m = Text::Markdown->new;
     template 'blog_entry', { title => $title, content => $m->markdown($text) };
