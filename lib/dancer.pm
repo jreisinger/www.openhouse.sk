@@ -142,9 +142,7 @@ get '/blog' => sub {
 
     my @tags = get_tags($blog_dir);
 
-    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
-
-    template 'blog', { title => "Blog", tags => \@tags, quote => $quote, entries => \@entries };
+    template 'blog', { title => "Blog", tags => \@tags, entries => \@entries };
 };
 
 # blog entries by category (tags)
