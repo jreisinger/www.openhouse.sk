@@ -1,4 +1,2 @@
-www.openhouse.sk
-================
+[http://www.openhouse.sk](http://www.openhouse.sk). Blog entries (data) are [here](https://github.com/jreisinger/blog).
 
-Blog code inspired by [Book](http://perladvent.org/2012/2012-12-22.html). Blog entries (data) are [here](https://github.com/jreisinger/blog).
