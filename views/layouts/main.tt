@@ -18,7 +18,7 @@
     </head>
     <body>
         <div id="page">
-            <a href="/">about</a> | <a href="/pete">p</a> | <a href="/jozef">j</a> | <a href="/blog">blog</a> | <a href="/projects">projects</a> | <a href="/private">private</a>
+            <a href="/">about</a> | <a href="/jozef">me</a> | <a href="/blog">blog</a> | <a href="/private">private</a>
         </div>
         <% content %>
         <div id="footer">

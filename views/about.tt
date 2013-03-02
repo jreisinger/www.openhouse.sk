@@ -1,16 +1,10 @@
 <div id="page">
     <h1>About OpenHouse</h1>
-    <p> Night job site of <a href="pete">P</a>ete and <a href="jozef">J</a>ozef about <a href="https://en.wikipedia.org/wiki/Free_software">free software</a> (or FOSS) and areas like: </p>
-
-    <ul>
-        <li>GNU/<a href="blog/linux">Linux</a> system administration</li>
-        <li><a href="blog/perl">Perl</a> programming language</li>
-        <li>continuous integration, continuous delivery</li>
-        <li>computer <a href="blog/networking">networking</a></li>
-        <li>IT <a href="blog/security">security</a></li>
-        <li>IT <a href="blog/audit">auditing</a></li>
-    </ul>
-
+    <p>
+<a href="jozef">Personal</a> web site about <a href="blog/perl">Perl</a>
+programming language, GNU/<a href="blog/linux">Linux</a> system administration,
+computer <a href="blog/networking">networking</a>, IT <a
+href="blog/security">security</a> and IT <a href="blog/audit">auditing</a>.
     <p>
         The source code of this web site
         is on <a href="https://github.com/jreisinger/www.openhouse.sk">GitHub</a>.
