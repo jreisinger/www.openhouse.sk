@@ -2,18 +2,18 @@
 <p>
 Tags:
     <% FOR tag IN tags %>
-        <a href=blog/<% tag %>><% tag %></a>
+        <a href="blog/<% tag %>"><% tag %></a>
     <% END %>
 </p>
 <p>
     The blog posts are categorized via tags above. The ten most recently modified posts:
+</p>
 <ul>
     <% FOR entry IN entries %>
-        <li><a href=blog/<% entry.url %>><% entry.title %></a> [ <%
+        <li><a href="blog/<% entry.url %>"><% entry.title %></a> [ <%
 entry.mtime_human %> ]</li>
     <% END %>
 </ul>
-</p>
 <p>
     Random quote:
 </p>

@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
-        <meta name="description" content="Personal web site">
-        <meta name="keywords" content="Perl,programming,Linux,administration,computer,networking,IT,security,auditing,audit">
+        <meta name="description" content="Personal web site" />
+        <meta name="keywords" content="Perl,programming,Linux,administration,computer,networking,IT,security,auditing,audit" />
         <!-- title taken from:
         http://stackoverflow.com/questions/11970625/how-to-make-a-page-specific-title-in-dancer-templates -->
         <title>
