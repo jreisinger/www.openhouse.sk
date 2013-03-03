@@ -190,7 +190,7 @@ get qr{/blog/(\w+)$} => sub {
 # Redirect requests to "old" blog posts
 get qr{/blog/(.*)/(.*)} => sub {
     my $blog_post = (splat)[1];
-    forward "/blog/" . $blog_post;
+    redirect "/blog/" . $blog_post, 301;
 };
 
 get qr{/blog/(.*)\.html} => sub {
