@@ -122,13 +122,10 @@ get '/jozef' => sub {
 # doneThis
 #
 
-get qr{/doneThis\.html} => sub {
+get qr{/(.*)/doneThis\.html} => sub {
+    my ($who) = splat;
     my $ext = "markdown"; # to distinguish from blog posts which have .md
-    my $text = file( $blog_dir, "jozef.$ext" )->slurp;
-
-    # Get title
-    my $title = (split "\n", $text)[0]; # first line is the title
-    $title =~ s/^#\s+//;
+    my $text = file( $blog_dir, "$who.$ext" )->slurp;
 
     # Inject quote after title
     my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
@@ -136,7 +133,7 @@ get qr{/doneThis\.html} => sub {
     $text =~ s/^(#\s*.*)/$1\n\n$warn\n\n<code>$quote<\/code>\n/;
 
     my $m = Text::Markdown->new;
-    template 'blog_entry', { title => $title, content => $m->markdown($text) };
+    template 'blog_entry', { title => "$who Done This", content => $m->markdown($text) };
 };
 
 # blog main page
