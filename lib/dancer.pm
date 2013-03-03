@@ -123,7 +123,8 @@ get '/jozef' => sub {
 #
 
 get qr{/doneThis\.html} => sub {
-    my $text = file( setting('public'), "jozef.$ext" )->slurp;
+    my $ext = "markdown"; # to distinguish from blog posts which have .md
+    my $text = file( $blog_dir, "jozef.$ext" )->slurp;
 
     # Get title
     my $title = (split "\n", $text)[0]; # first line is the title
