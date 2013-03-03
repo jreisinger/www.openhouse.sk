@@ -11,6 +11,11 @@ use 5.010;
 our $VERSION = '0.1';
 
 sub parse_blog_entries {
+
+    # Return AoH, where
+    #   A -- sorted list of blog posts
+    #   H -- various info on the blog post
+
     my $dir = shift;
     my $sort = shift // "by_title";    # defaults to sorting by title
 
@@ -62,6 +67,9 @@ sub parse_blog_entries {
 }
 
 sub get_tags {
+
+    # Return sorted list of tags (blog posts categories)
+
     my $blog_dir = shift;
 
     my @entries = parse_blog_entries($blog_dir);
