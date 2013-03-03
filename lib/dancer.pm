@@ -148,7 +148,7 @@ get '/blog' => sub {
 
     my @tags = get_tags($blog_dir);
 
-    template 'blog', { title => "Blog", tags => \@tags, entries => \@entries };
+    template 'blog', { title => "All Blog Posts", tags => \@tags, entries => \@entries };
 };
 
 # categories (tags)
@@ -156,7 +156,7 @@ get '/blog' => sub {
 get qr{/blog/(\w+)$} => sub {
     my ($tag) = splat;
 
-    my @entries = parse_blog_entries($blog_dir);
+    my @entries = parse_blog_entries($blog_dir, "by_mtime");
     my @tags    = get_tags($blog_dir);
 
     # Push entries (posts) under their tags

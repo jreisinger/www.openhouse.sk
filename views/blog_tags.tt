@@ -7,6 +7,6 @@ Tags:
 </p>
 <ul>
     <% FOR entry IN entries %>
-        <li><a href="<% entry.url %>"><% entry.title %></a></li>
+        <li><a href="<% entry.url %>" title="<% entry.mtime_human %>"><% entry.title %></a></li>
     <% END %>
 </ul>
