@@ -190,6 +190,12 @@ get qr{/blog/(\w+)$} => sub {
 # blog entries
 #
 
+# Redirect requests to "old" blog posts
+get '/blog/*/*' => sub {
+    my $blog_post = (splat)[1];
+    forward "/blog/" . $blog_post;
+};
+
 get qr{/blog/(.*)\.html} => sub {
     my ($file) = splat;
     my $text = file( $blog_dir, "$file.$ext" )->slurp;
