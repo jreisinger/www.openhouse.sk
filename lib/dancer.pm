@@ -80,8 +80,6 @@ sub get_tags {
         }
     }
 
-    push @tags, "All"; # Capitalize so it always sorts first
-
     return sort @tags;
 }
 
@@ -163,16 +161,12 @@ get qr{/blog/(\w+)$} => sub {
 
     # Push entries (posts) under their tags
     my @tagged_entries;
-    if ( $tag eq "All" ) {
-        @tagged_entries = @entries;
-    } else {
-        for my $entry (@entries) {
-            for my $entry_tag ( @{ $entry->{tags} } ) {
-                if ( $entry_tag eq $tag ) {
-                    push @tagged_entries, $entry
-                      unless grep $entry->{source} eq $_->{source},
-                      @tagged_entries;
-                }
+    for my $entry (@entries) {
+        for my $entry_tag ( @{ $entry->{tags} } ) {
+            if ( $entry_tag eq $tag ) {
+                push @tagged_entries, $entry
+                  unless grep $entry->{source} eq $_->{source},
+                  @tagged_entries;
             }
         }
     }
@@ -181,7 +175,6 @@ get qr{/blog/(\w+)$} => sub {
     my $title;
     given ($tag) {
         when ("various") { $title = "Various Blog Posts"; }
-        when ("All")     { $title = "All Blog Posts"; }
         default          { $title = "$tag Related Blog Posts"; }
     }
 
@@ -205,12 +198,12 @@ get qr{/blog/(.*)\.html} => sub {
     my ($title, $tags) = (split "\n", $text)[0,1]; # first line is the title, second line are tags
     $title =~ s/^#\s+//;
 
-    # Changing '###### tag1, tag2' to 'Tags: [All](blog/All) [tag1](blog/tag1) [tag2](blog/tag2)'
+    # Changing '###### tag1, tag2' to 'Tags: [tag1](blog/tag1) [tag2](blog/tag2)'
     $tags =~ s/^#+//;
     $tags =~ s/\s+//g;
     my @tags = split ",", $tags;
     s|(\w+)|[$1](/blog/$1)| for @tags;
-    $text =~ s|^#{4,}.*$|Tags: [All](/blog/All) @tags|m; # There should be 6 pounds ('#') but you never know :)
+    $text =~ s|^#{4,}.*$|Tags: @tags|m; # There should be 6 pounds ('#') but you never know :)
 
     my $m = Text::Markdown->new;
     template 'blog_entry', { title => $title, content => $m->markdown($text) };
