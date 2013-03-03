@@ -1,4 +1,4 @@
-<h1>Blog - All Posts</h1>
+<h1>All Blog Posts</h1>
 <p>
 Tags:
     <% FOR tag IN tags %>
