@@ -1,4 +1,4 @@
-<h1>All Blog Posts</h1>
+<h1>All Blog Posts (sorted by <a href="blog/unix-times.html">mtime</a>)</h1>
 <p>
 Tags:
     <% FOR tag IN tags %>
