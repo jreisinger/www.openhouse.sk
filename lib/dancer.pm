@@ -37,7 +37,7 @@ sub parse_blog_entries {
             # parse a simple header using the kite secret operator
             chomp( my ( $title, $tags ) = ( ~~ <$fh>, ~~ <$fh> ) );
             $title =~ s/^[#\s]+//;
-            $tags =~ s/^[#\s]+//;
+            $tags =~ s/[#\s]+//g;
 
             # update the structure will all relevant information
             my $source = substr( $File::Find::name, length($dir) );
