@@ -10,3 +10,7 @@ Tags:
         <li><a href="blog/<% entry.url %>" title="<% entry.mtime_human %>"><% entry.title %></a></li>
     <% END %>
 </ul>
+<p>
+Blog posts are stored on <a
+    href="https://github.com/jreisinger/blog">GitHub</a>.
+</p>
