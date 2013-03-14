@@ -176,10 +176,20 @@ get qr{/blog/(\w+)$} => sub {
         default          { $title = "$tag Related Blog Posts"; }
     }
 
+    my $picture;
+    given ($tag) {
+        when ("perl") {
+            $picture =
+'<img src="http://imgs.xkcd.com/comics/lisp.jpg" alt="Perl" height="165" width="555">';
+        }
+        default { $picture = ""; }
+    }
+
     template 'blog_tags',
       {
         title   => $title,
         tags    => \@tags,
+        picture => $picture,
         entries => \@tagged_entries
       };
 };

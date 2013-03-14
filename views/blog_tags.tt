@@ -10,3 +10,4 @@ Tags:
         <li><a href="<% entry.url %>" title="<% entry.mtime_human %>"><% entry.title %></a></li>
     <% END %>
 </ul>
+<p><% picture %></p>
