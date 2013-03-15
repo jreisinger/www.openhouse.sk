@@ -108,7 +108,8 @@ my $blog_dir = dir( setting('public'), 'blog' );
 my $ext = 'md';
 
 get '/' => sub {
-    template 'about', { title => "About" };
+    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
+    template 'about', { title => "About", quote => $quote };
 };
 
 get '/private' => sub {
@@ -126,11 +127,6 @@ get qr{/(.*)/doneThis\.html} => sub {
     my ($who) = splat;
     my $ext = "markdown"; # to distinguish from blog posts which have .md
     my $text = file( $blog_dir, "$who.$ext" )->slurp;
-
-    # Inject quote after title
-    my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
-    my $warn = "(Some quotes are in Slovak or Italian. If you don't understand, don't worry, just hit F5. :)";
-    $text =~ s/^(#\s*.*)/$1\n\n$warn\n\n<code>$quote<\/code>\n/;
 
     my $m = Text::Markdown->new;
     template 'blog_entry', { title => "$who Done This", content => $m->markdown($text) };
