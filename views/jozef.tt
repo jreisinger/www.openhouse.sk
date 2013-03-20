@@ -1,12 +1,19 @@
 <h1>Jozef</h1>
+
 <p>
-I am interested in how computer systems work and how to use and manage them
-effectively. More information about me can be found here:
+I am interested, among other things, in how computer systems work and how to
+use and manage them effectively. More information about me can be found here:
 </p>
 
 <ul>
-    <li><a href="http://sk.linkedin.com/in/jozefreisinger">LinkedIn profile</a> (you have to be logged in to see my photo :)</li>
-    <li><a href="https://github.com/jreisinger">GitHub account</a> -- some of my scripts</li>
-    <li><a href="http://perlmonks.org/?node_id=898593">PerlMonks account</a> and <a href="http://perlmonks.org/?node_id=6364;user=j0se">participation</a></li>
-    <li><a href="/jozef/doneThis.html">What I have done</a> (experimental and personal :)</li>
+    <li><a href="http://sk.linkedin.com/in/jozefreisinger">LinkedIn profile</a>
+    -- my CV and related stuff (you have to be logged in to see my photo :-))</li>
+    <li><a href="https://github.com/jreisinger">GitHub account</a> -- some of
+    my code</li>
+    <li><a href="http://perlmonks.org/?node_id=898593">PerlMonks account</a>
+    and <a
+        href="http://perlmonks.org/?node_id=6364;user=j0se">participation</a>
+    -- me in The Monastery</li>
+    <li><a href="/jozef/doneThis.html">What I have done</a> (this is
+    experimental and personal, i.e. most likely not interesting for you)</li>
 </ul>
