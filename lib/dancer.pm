@@ -120,16 +120,33 @@ get '/jozef' => sub {
     template 'jozef', { title => "Jozef" };
 };
 
+# bookmarks
+#
+
+get qr{/(.*)/bookmarks\.html} => sub {
+    my ($who) = splat;
+    my $ext = "markdown";    # to distinguish from blog posts which have .md
+    my $text = file( $blog_dir, "${who}-bookmarks.$ext" )->slurp;
+
+    my $m = Text::Markdown->new;
+    template 'blog_entry',
+      {
+        title   => "${who}'s Bookmarks",
+        content => $m->markdown($text)
+      };
+};
+
 # doneThis
 #
 
 get qr{/(.*)/doneThis\.html} => sub {
     my ($who) = splat;
-    my $ext = "markdown"; # to distinguish from blog posts which have .md
+    my $ext = "markdown";    # to distinguish from blog posts which have .md
     my $text = file( $blog_dir, "$who.$ext" )->slurp;
 
     my $m = Text::Markdown->new;
-    template 'blog_entry', { title => "$who Done This", content => $m->markdown($text) };
+    template 'blog_entry',
+      { title => "$who Done This", content => $m->markdown($text) };
 };
 
 # blog main page
