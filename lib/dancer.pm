@@ -109,7 +109,7 @@ my $ext = 'md';
 
 get '/' => sub {
     my ($quote) = get_rand_lines( $blog_dir . "/" . "quotes.txt" );
-    template 'about', { title => "About", quote => $quote };
+    template 'home', { title => "Home", quote => $quote };
 };
 
 get '/private' => sub {
