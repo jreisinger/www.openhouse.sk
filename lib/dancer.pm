@@ -129,7 +129,7 @@ get qr{/(.*)/bookmarks\.html} => sub {
     my $text = file( $blog_dir, "${who}-bookmarks.$ext" )->slurp;
 
     my $m = Text::Markdown->new;
-    template 'blog_entry',
+    template 'non_blog_entry',
       {
         title   => "${who}'s Bookmarks",
         content => $m->markdown($text)
@@ -145,7 +145,7 @@ get qr{/(.*)/doneThis\.html} => sub {
     my $text = file( $blog_dir, "$who.$ext" )->slurp;
 
     my $m = Text::Markdown->new;
-    template 'blog_entry',
+    template 'non_blog_entry',
       { title => "$who Done This", content => $m->markdown($text) };
 };
 
