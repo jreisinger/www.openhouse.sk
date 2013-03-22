@@ -14,7 +14,15 @@ use and manage them effectively. More information about me can be found here:
     and <a
         href="http://perlmonks.org/?node_id=6364;user=j0se">participation</a>
     -- me in The Monastery</li>
-    <li><a href="/jozef/doneThis.html">What I have done</a> (this is
-    experimental and personal, i.e. most likely not interesting for you)</li>
+</ul>
+
+<h2>My stuff</h2>
+
+<p>
+This is experimental and/or personal, i.e. most likely not interesting for you:
+</p>
+
+<ul>
+    <li><a href="/jozef/doneThis.html">What I have done</a></li>
     <li><a href="/jozef/bookmarks.html">My bookmarks</a></li>
 </ul>
