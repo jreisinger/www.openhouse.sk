@@ -22,10 +22,11 @@ it's because it's not meant for you.
 The source code of this web site
 is on <a href="https://github.com/jreisinger/www.openhouse.sk">GitHub</a>.
 </p>
-<p>
-<code><% quote %></code>
-</p>
+<h2>Quote</h2>
 <p>
 (Some quotes are in Slovak or Italian. If you don't understand, don't worry,
 just hit F5. :-))
+</p>
+<p>
+<code><% quote %></code>
 </p>
