@@ -13,8 +13,14 @@ color: #333;
 }
 
 h1 {
-padding-top: 0.5em;
-font-size: 28px;
+padding-top: 0.1em;
+font-size: 22px;
+color: #000;
+}
+
+h2 {
+padding-top: 0.1em;
+font-size: 18px;
 color: #000;
 }
 
