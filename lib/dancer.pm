@@ -229,6 +229,7 @@ get qr{/blog/(.*)\.html} => sub {
     $tags =~ s/\s+//g;
     my @tags = split ",", $tags;
     s|(\w+)|[$1](/blog/$1)| for @tags;
+    @tags = join ", ", @tags; # add commas back
     $text =~ s|^#{4,}.*$|Tags: @tags|m; # There should be 6 pounds ('#') but you never know :)
 
     my $m = Text::Markdown->new;

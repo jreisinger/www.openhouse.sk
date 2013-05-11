@@ -2,7 +2,7 @@
 <p>
 Tags:
     <% FOR tag IN tags %>
-        <a href="blog/<% tag %>"><% tag %></a>
+        <a href="blog/<% tag %>"><% tag %></a><% IF loop.last %><% ELSE %>,<% END %>
     <% END %>
 </p>
 <ul>
