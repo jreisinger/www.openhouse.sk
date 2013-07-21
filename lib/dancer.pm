@@ -124,6 +124,23 @@ get '/wiki' => sub {
     template 'wiki', { title => "wiki" };
 };
 
+# Redirecting Google webmaster tools' complaints
+get qr{/blog/} => sub {
+    redirect "/blog", 301;
+};
+
+get qr{/public} => sub {
+    redirect "http://wiki.openhouse.sk/pub", 301;
+};
+
+get qr{/wiki/FOSS} => sub {
+    redirect "http://wiki.openhouse.sk/FOSS", 301;
+};
+
+get qr{/skolenia} => sub {
+    redirect "http://wiki.openhouse.sk/skolenia", 301;
+};
+
 # bookmarks
 #
 
