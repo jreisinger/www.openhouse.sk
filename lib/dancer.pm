@@ -120,6 +120,10 @@ get '/jozef' => sub {
     template 'jozef', { title => "Jozef" };
 };
 
+get '/wiki' => sub {
+    template 'wiki', { title => "wiki" };
+};
+
 # bookmarks
 #
 
