@@ -1,23 +1,4 @@
 <h1>Wiki</h1>
 
 <p> <a href="http://wiki.openhouse.sk">This</a> is my old but still useful
-wiki. The new one, which is a kind of blog :), is <a href=blog>here</a>. Not
-all pages are public. However these are (some pages are in Slovak - SK, others
-in English - EN): </p>
-
-<ul>
-    <li><a href="http://wiki.openhouse.sk/FOSS">FOSS a jeho výhody</a> (SK)</l
-i>
-    <li><a href="http://wiki.openhouse.sk/RAID">RAID</a> (SK)</li>
-    <li><a href="http://wiki.openhouse.sk/LVM">LVM</a> (SK)</li>
-    <li><a href="http://wiki.openhouse.sk/Tipy_a_triky">Tipy a triky</a> (SK/EN)</li>
-    <ul>
-        <li><a href="http://wiki.openhouse.sk/Tipy_a_triky/Perl">Perl</a></li>
-        <li><a href="http://wiki.openhouse.sk/Tipy_a_triky/Unix">Unix</a></li>
-        <li><a href="http://wiki.openhouse.sk/Tipy_a_triky/Vim">Vim</a></li>
-    </ul>
-</ul>
-
-<p>
-Login <a href="https://wiki.openhouse.sk/action/login/OHwiki?action=login">here</a>.
-</p>
+wiki. The new one, which is a kind of blog :), is <a href=blog>here</a>.</p>
