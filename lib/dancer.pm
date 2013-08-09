@@ -121,7 +121,7 @@ get '/jozef' => sub {
 };
 
 get '/wiki' => sub {
-    template 'wiki', { title => "wiki" };
+    redirect "http://wiki.openhouse.sk", 301;
 };
 
 # Redirecting Google webmaster tools' complaints
