@@ -237,6 +237,11 @@ get qr{/blog/(.*)/(.*)} => sub {
     redirect "/blog/" . $blog_post, 301;
 };
 
+# Redirect blog to wiki
+get '/blog/perl-one-liners.html' => sub {
+    redirect "http://wiki.openhouse.sk/PerlOneLiners", 301;
+};
+
 get qr{/blog/(.*)\.html} => sub {
     my ($file) = splat;
     my $text = file( $blog_dir, "$file.$ext" )->slurp;
