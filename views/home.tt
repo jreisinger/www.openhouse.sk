@@ -1,21 +1,11 @@
 <h1>OpenHouse</h1>
 <p>
-This is a personal web site about <a href="blog/perl">Perl</a> programming language,
-GNU/<a href="blog/linux">Linux</a> system administration, computer <a
-    href="blog/networking">networking</a>, IT <a
-    href="blog/security">security</a> and IT <a href="blog/audit">auditing</a>.
-</p>
-<p>
-A visitor will probably be most interested, if at all, in my <a
-    href="blog">blog</a>. It's actually a hybrid of blog and <a
-    href="wiki">wiki</a> and I use it for taking notes mostly about stuff
-mentioned in the paragraph above.
-</p>
-<p>
+This is a personal web site about Perl programming language, GNU/Linux system
+administration, computer networking</a>, IT security and IT auditing. A visitor
+will probably be most interested, if at all, in my <a
+    href="blog">blog</a> or <a href="wiki">wiki</a>.
 In case you are having trouble sleeping, info on <a href="jozef">me</a> might 
-help :).
-</p>
-<p>
+help :-).
 If you can't access some/all of the <a href="private">private stuff</a>, well,
 it's because it's not meant for you.
 </p>
@@ -26,7 +16,7 @@ is on <a href="https://github.com/jreisinger/www.openhouse.sk">GitHub</a>.
 <h2>Quote</h2>
 <p>
 (Some quotes are in Slovak or Italian. If you don't understand, don't worry,
-just hit F5. :-))
+just hit F5.)
 </p>
 <p>
 <code><% quote %></code>
