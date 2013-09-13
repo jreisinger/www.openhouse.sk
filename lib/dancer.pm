@@ -213,8 +213,8 @@ get qr{/blog/(\w+)$} => sub {
     my $picture;
     given ($tag) {
         when ("perl") {
-            $picture =
-'<img src="http://imgs.xkcd.com/comics/lisp.jpg" alt="Perl" height="165" width="555">';
+            $picture = 'See also <a
+            href="http://wiki.openhouse.sk/CategoryPerl">wiki</a>.';
         }
         default { $picture = ""; }
     }
