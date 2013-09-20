@@ -216,6 +216,10 @@ get qr{/blog/(\w+)$} => sub {
             $picture = 'See also <a
             href="http://wiki.openhouse.sk/CategoryPerl">wiki</a>.';
         }
+        when ("linux") {
+            $picture = 'See also <a
+            href="http://wiki.openhouse.sk">wiki</a>.';
+        }
         default { $picture = ""; }
     }
 
