@@ -210,13 +210,12 @@ get qr{/blog/(\w+)$} => sub {
         default          { $title = "$tag Related Blog Posts"; }
     }
 
+    # picture or link
     my $picture;
-    given ($tag) {
-        when ("perl") {
-            $picture = 'See also <a
-            href="http://wiki.openhouse.sk/CategoryPerl">wiki</a>.';
-        }
-        when ("linux") {
+    given ($tag)
+    {
+        when ( /perl/i or /linux/i or /var/i )
+        {
             $picture = 'See also <a
             href="http://wiki.openhouse.sk">wiki</a>.';
         }
