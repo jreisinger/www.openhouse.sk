@@ -247,6 +247,9 @@ get '/blog/perl-one-liners.html' => sub {
 get '/blog/perl-caveats.html' => sub {
     redirect "http://wiki.openhouse.sk/PerlTips", 301;
 };
+get '/blog/perl_resources.html' => sub {
+    redirect "http://wiki.openhouse.sk/PerlResources", 301;
+};
 
 get qr{/blog/(.*)\.html} => sub {
     my ($file) = splat;
